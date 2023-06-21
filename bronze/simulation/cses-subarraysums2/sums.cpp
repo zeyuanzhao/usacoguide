@@ -5,6 +5,8 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
+    // freopen("sums.in", "r", stdin);
+
     int n, x;
     cin >> n >> x;
     
@@ -13,16 +15,14 @@ int main() {
         cin >> arr[i];
     }
 
-    vector<int> sums(n+1, 0);
-    for (int i = 1; i < n+1; i++) {
-        sums[i] = sums[i-1] + arr[i];
+    unordered_map<int, int> sums;
+    int prefix = 0;
+    int ans = 0;
+    sums[0] = 1;
+    for (int i = 1; i <= n; i++) {
+        prefix += arr[i];
+        ans += sums[prefix-x];
+        sums[prefix]++;
     }
-    
-    int count = 0;
-    for (int i = 1; i < n+1; i++) {
-        for (int j = i; j < n+1; j++) {
-            if (sums[j] - sums[i-1] == x) count++;
-        }
-    }
-    cout << count;
+    cout << ans;
 }
