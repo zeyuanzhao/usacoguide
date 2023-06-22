@@ -26,7 +26,7 @@ int main() {
     }
 
     int ans = INT_MAX;
-    for (int i = 1; i <= n-k; i++) {
+    for (int i = 1; i <= n-k+1; i++) {
         int dif = prefix[i+k-1] - prefix[i-1];
         ans = min(ans, dif);
     }
