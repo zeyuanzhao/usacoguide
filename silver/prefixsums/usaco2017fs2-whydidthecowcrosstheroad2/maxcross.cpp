@@ -25,11 +25,10 @@ int main() {
         run++;
     }
 
-    int ans = n+123;
-    for (int i = 0; i <= n-k; i++) {
+    int ans = INT_MAX;
+    for (int i = 1; i <= n-k; i++) {
         int dif = prefix[i+k-1] - prefix[i-1];
         ans = min(ans, dif);
     }
     cout << ans;
-
 }
