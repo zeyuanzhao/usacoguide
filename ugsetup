@@ -6,11 +6,28 @@
 # echo $3
 # echo $4
 
-mkdir $1$2"-"$3
-cd $1$2"-"$3
-touch $4.cpp
-touch $4.in
-touch $4.out
+# check if variable 1 exists
+if [ -z "$1" ]
+then
+    echo "Please provide problem source"
+    exit 1
+fi
+FILENAME = ""
+# if variable 1 equals "usaco"
+if [ "$1" == "usaco" ] || [ "$1" == "cf" ]
+then
+    mkdir $1$2"-"$3
+    cd $1$2"-"$3
+    FILENAME = $4
+elif [ "$1" == "cses" ]
+then
+    mkdir $1"-"$2
+    cd $1"-"$2
+    FILENAME = $3
+fi
+touch $FILENAME.cpp
+touch $FILENAME.in
+touch $FILENAME.out
 CPPCODE="#include <bits/stdc++.h>
 using namespace std;
 int main() {
@@ -19,4 +36,4 @@ int main() {
     // freopen(\"$4.in\", \"r\", stdin);
     // freopen(\"$4.out\", \"w\", stdout);
 }"
-echo "$CPPCODE" >> $4.cpp
+echo "$CPPCODE" >> $FILENAME.cpp
