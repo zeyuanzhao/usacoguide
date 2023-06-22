@@ -14,6 +14,7 @@ int main() {
     unordered_map<int, int> sums;
     int prefix = 0;
     int ans = 0;
+    sums[0] = 1;
     for (int i = 1; i <= n; i++) {
         prefix = (prefix + arr[i]) % n;
         ans += sums[prefix];
