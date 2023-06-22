@@ -12,18 +12,18 @@ then
     echo "Please provide problem source"
     exit 1
 fi
-FILENAME = ""
+FILENAME=""
 # if variable 1 equals "usaco"
-if [ "$1" == "usaco" ] || [ "$1" == "cf" ]
+if [ "$1" = "usaco" ] || [ "$1" = "cf" ]
 then
     mkdir $1$2"-"$3
     cd $1$2"-"$3
-    FILENAME = $4
-elif [ "$1" == "cses" ]
+    FILENAME=$4
+elif [ "$1" = "cses" ]
 then
     mkdir $1"-"$2
     cd $1"-"$2
-    FILENAME = $3
+    FILENAME=$3
 fi
 touch $FILENAME.cpp
 touch $FILENAME.in
