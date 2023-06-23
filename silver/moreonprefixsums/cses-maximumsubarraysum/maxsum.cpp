@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    freopen("maxsum.in", "r", stdin);
+    // freopen("maxsum.in", "r", stdin);
     // freopen("maxsum.out", "w", stdout);
 
     int n; cin >> n;
