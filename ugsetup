@@ -35,7 +35,7 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    // freopen(\"$4.in\", \"r\", stdin);
-    // freopen(\"$4.out\", \"w\", stdout);
+    // freopen(\"$FILENAME.in\", \"r\", stdin);
+    // freopen(\"$FILENAME.out\", \"w\", stdout);
 }"
 echo "$CPPCODE" >> $FILENAME.cpp
