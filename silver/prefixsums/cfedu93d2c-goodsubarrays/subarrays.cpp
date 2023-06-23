@@ -12,15 +12,15 @@ int main() {
         int n; cin >> n;
         string input; cin >> input;
         int prefix = 0;
-        unordered_map<int, int> diff;
+        unordered_map<long, long> diff;
         for (int i = 0; i < n; i++) {
             prefix += input.at(i) - '0';
             diff[prefix-i-1]++;
         }
         diff[0]++;
-        int ans = 0;
+        long long ans = 0;
         for (auto i : diff) {
-            ans += i.second * (i.second-1) / 2;
+            ans += (long long) i.second * ( (long long) i.second-1) / 2;
         }
         cout << ans << endl;
     }
