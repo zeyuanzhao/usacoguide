@@ -8,11 +8,11 @@ int main() {
     // freopen(".out", "w", stdout);
 
     int n; cin >> n;
-    int prefix = 0;
-    int small = 0;
-    int ans = INT_MIN;
+    long long prefix = 0;
+    long long small = 0;
+    long long ans = LONG_MAX;
     for (int i = 0; i < n; i++) {
-        int num; cin >> num; prefix += num;
+        long num; cin >> num; prefix += num;
         ans = max(ans, prefix-small);
         small = min(small, prefix);
     }
