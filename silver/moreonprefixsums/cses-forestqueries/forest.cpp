@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    // freopen("forest.in", "r", stdin);
+    freopen("forest.in", "r", stdin);
     // freopen("forest.out", "w", stdout);
 
     int n, q; cin >> n >> q;
@@ -25,6 +25,6 @@ int main() {
 
     while (q--) {
         int y1, x1, y2, x2; cin >> y1 >> x1 >> y2 >> x2;
-        cout << prefix[y2][x2] - prefix[y1-1][x2] - prefix[y2][x1-1] + prefix[x1-1][y1-1] << endl;
+        cout << prefix[y2][x2] - prefix[y1-1][x2] - prefix[y2][x1-1] + prefix[y1-1][x1-1] << endl;
     }
 }
