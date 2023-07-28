@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    // freopen("forest.in", "r", stdin);
+    // freopen("forest.in",w "r", stdin);
     // freopen("forest.out", "w", stdout);
 
     int n, q; cin >> n >> q;
