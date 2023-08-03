@@ -13,17 +13,18 @@ int main() {
         cin >> mountains[i].first >> mountains[i].second;
     }
 
-    sort(mountains.begin(), mountains.end(), [](pair<int, int> a, pair<int, int> b) { return a.second > b.second; });
+    sort(mountains.begin(), mountains.end(), [](pair<int, int> a, pair<int, int> b) { return a.second != b.second ? a.second > b.second : a.first > b.first; });
 
     vector<pair<int, int>> peaks;
     peaks.push_back(mountains[0]);
     for (int i = 1; i < n; i++) {
         bool seeable = true;
         for (int j = 0; j < peaks.size(); j++) {
-            int ydiff = mountains[j].second - mountains[i].second;
-            int xdiff = abs(mountains[j].first - mountains[i].first);
+            int ydiff = peaks[j].second - mountains[i].second;
+            int xdiff = abs(peaks[j].first - mountains[i].first);
             if (xdiff <= ydiff) {
                 seeable = false;
+                break;
             }
         }
         if (seeable) {
