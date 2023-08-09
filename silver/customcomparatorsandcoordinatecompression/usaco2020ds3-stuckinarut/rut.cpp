@@ -15,8 +15,8 @@ struct Cow {
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    freopen("rut.in", "r", stdin);
-    freopen("rut.out", "w", stdout);
+    // freopen("rut.in", "r", stdin);
+    // freopen("rut.out", "w", stdout);
 
     int N; cin >> N;
     vector<Cow> north;
