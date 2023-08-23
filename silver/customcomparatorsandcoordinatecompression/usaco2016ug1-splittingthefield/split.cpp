@@ -5,7 +5,7 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     freopen("split.in", "r", stdin);
-    freopen("split.out", "w", stdout);
+    // freopen("split.out", "w", stdout);
 
     int n; cin >> n;
     vector<pair<int, int>> cows(n);
