@@ -19,15 +19,17 @@ int main() {
     
     int ans = 0;
     int a = 0, b = n-1;
-    for (int i = 0; i < m/2; i++) {
+    while (a <= b) {
         int time = cows[a].second + cows[b].second;
-        if (--cows[a].first == 0) {
-            a++;
+        int num = min(cows[a].first, cows[b].first);
+        if (a == b) {
+            num /= 2;
         }
-        if (--cows[b].first == 0) {
-            b--;
-        }
-        ans = max(ans, time);
+        cows[a].first -= num;
+        cows[b].first -= num;
+        if (cows[a].first == 0) a++;
+        if (cows[b].first == 0) b--;
+        ans = max(time, ans);
     }
     cout << ans << endl;
 }
