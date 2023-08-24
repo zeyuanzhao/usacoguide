@@ -18,7 +18,7 @@ int main() {
     int l = 0, r = 0, sum = 0;
     int count = 0;
     while (l < n && r <= n) {
-        while (r < n) {
+        while (r < n && sum < x) {
             sum += nums[r++];
             if (sum >= x) {
                 break;
