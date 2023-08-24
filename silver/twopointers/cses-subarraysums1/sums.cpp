@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    freopen("sums.in", "r", stdin);
+    // freopen("sums.in", "r", stdin);
     // freopen("sums.out", "w", stdout);
 
     int n, x;
